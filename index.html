@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Fenômenos - Psicologia por Ana Carolina</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #f4f4f4;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- Cores e Estilos Gerais --- */
+        header {
+            background-color: #795640; /* Marrom */
+            color: #ffffff;
+            padding: 2rem 1rem; /* Header um pouco menor */
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 80px; /* Logo um pouco menor */
+            filter: brightness(0) invert(1);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #795640; /* Marrom */
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #A9BBC5; /* Azul */
+        }
+
+        /* --- Estilo das Abas --- */
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 2rem;
+            justify-content: center; /* Centraliza as abas */
+        }
+
+        .nav-tabs .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #795640; /* Marrom */
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 0.8rem 1.5rem;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: #E4E1A6; /* Amarelo */
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #000;
+            background-color: #fff;
+            border-color: #A9BBC5 #A9BBC5 #fff; /* Azul */
+            border-bottom: 2px solid #fff; /* Esconde a borda de baixo para conectar com o conteúdo */
+            transform: translateY(-2px);
+            box-shadow: 0 -4px 8px -4px rgba(0,0,0,0.1);
+        }
+
+        .tab-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            min-height: 500px;
+        }
+
+        .img-fluid {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .img-fluid.rounded-circle {
+            border: 8px solid #A9BBC5; /* Azul */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* Estilo para a aba com fundo amarelo */
+        .tab-pane.bg-amarelo {
+            background-color: #E4E1A6; /* Amarelo */
+        }
+        .tab-pane.bg-amarelo p, .tab-pane.bg-amarelo .section-title {
+             color: #5c4033;
+        }
+        
+
+        footer {
+            background-color: #A9BBC5; /* Azul */
+            color: #555;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #555; 
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover{
+            color: #000;
+            cursor: pointer;
+        }
+        
+        /* --- Botões Sociais --- */
+        .social-buttons {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .social-buttons a {
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease-in-out; opacity: 0.9;
+        }
+        .social-buttons a:hover {
+            transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); opacity: 1;
+        }
+        .whatsapp-btn { background-color: #25D366; }
+        .instagram-btn { background: #e1306c; }
+
+        @media (max-width: 767px) {
+            .nav-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; }
+            .nav-tabs .nav-item { flex-shrink: 0; }
+            .social-buttons { bottom: 20px; right: 20px; }
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="img/lampada-planta.png" alt="Logo Lâmpada e Planta" class="logo">
+        <h1>Entre Fenômenos</h1>
+        <p>Psicologia Fenomenológica por Ana Carolina</p>
+    </header>
+
+    <div class="container mt-4">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="projeto-tab" data-bs-toggle="tab" data-bs-target="#projeto-tab-pane" type="button" role="tab" aria-controls="projeto-tab-pane" aria-selected="true">O Projeto</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="abordagem-tab" data-bs-toggle="tab" data-bs-target="#abordagem-tab-pane" type="button" role="tab" aria-controls="abordagem-tab-pane" aria-selected="false">A Abordagem</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sobre-tab" data-bs-toggle="tab" data-bs-target="#sobre-tab-pane" type="button" role="tab" aria-controls="sobre-tab-pane" aria-selected="false">Sobre Mim</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="servicos-tab" data-bs-toggle="tab" data-bs-target="#servicos-tab-pane" type="button" role="tab" aria-controls="servicos-tab-pane" aria-selected="false">Serviços</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reflexoes-tab" data-bs-toggle="tab" data-bs-target="#reflexoes-tab-pane" type="button" role="tab" aria-controls="reflexoes-tab-pane" aria-selected="false">Reflexões</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            
+            <div class="tab-pane fade show active" id="projeto-tab-pane" role="tabpanel" aria-labelledby="projeto-tab" tabindex="0">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h2 class="section-title">O Projeto "Entre Fenômenos"</h2>
+                        <p>Com início no dia 12 de março de 2025, o “Entre Fenômenos” surgiu após muitos desencontros de caminhos da minha trajetória na Psicologia. Foram muitos pensamentos e sentimentos para encontrar um nicho e uma direção. Mas tenho percebido que a vida vai sempre dando um jeitinho de encaixar as coisas.</p>
+                        <p>A missão desse projeto é aproximar teoria e prática da Fenomenologia. E é a partir dessa inquietação que o Entre Fenômenos, apelidado carinhosamente por mim de EFE (lê-se “e efe”), surgiu.</p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <img src="img/entre-fenomenos-logo.jpg" class="img-fluid rounded-circle" alt="Logo do Projeto Entre Fenômenos">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade bg-amarelo" id="abordagem-tab-pane" role="tabpanel" aria-labelledby="abordagem-tab" tabindex="0">
+                 <div class="row align-items-center">
+                    <div class="col-md-5 text-center">
+                        <img src="img/areia-fenomeno.png" class="img-fluid" alt="Arte com areia formando montanhas">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="section-title">Fenomenologia Existencial-Humanista</h2>
+                        <p>A fenomenologia iniciou como um método proposto por Husserl para se contrapor ao racionalismo de Descartes. Sua preocupação não é explicar, mas sim descrever. Isso mostra que não existe uma verdade única para um acontecimento, mas sim a forma como cada ser o experiencia. O termo significa o "estudo dos fenômenos".</p>
+                        <p>E o que é um fenômeno? É toda situação que queremos explorar, como um medo, uma relação familiar ou a relação com um objeto. A exploração do fenômeno ajuda a pessoa a entender melhor a ideia que ela está trazendo à consciência.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="sobre-tab-pane" role="tabpanel" aria-labelledby="sobre-tab" tabindex="0">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center">
+                        <img src="img/quebra-cabeca.jpeg" class="img-fluid" alt="Quebra-cabeça sendo montado">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="section-title">Ponto de Partida: Quem Sou Eu</h2>
+                        <p>Meu nome é Ana Carolina, nascida e crescida na cidade de Atibaia-SP. Sou graduada desde 2018 pela UNIFAAT e pós-graduada em Psicopedagogia, atuando desde então na área clínica com a abordagem fenomenológica-existencial.</p>
+                        <p>Atualmente, ministro aulas sobre a teoria da Fenomenologia, supervisiono casos clínicos e sou responsável pela orientação de Trabalhos de Conclusão de Curso na mesma instituição onde me formei.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade bg-amarelo" id="servicos-tab-pane" role="tabpanel" aria-labelledby="servicos-tab" tabindex="0">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center">
+                        <img src="img/ana-salaDeAula.jpg" class="img-fluid" alt="Ana Carolina ministrando uma palestra">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="section-title">Meus Serviços</h2>
+                        <p>Ofereço atendimento clínico e supervisão para outros profissionais da nossa área. Também realizo palestras e rodas de conversa. Se tiver interesse em algum desses serviços, fique à vontade para me contatar.</p>
+                        <p>Você pode me enviar uma mensagem pelo telefone/WhatsApp **11 9.9606-8535** ou conhecer mais do meu trabalho no Instagram **@entre.fenomenos**.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="reflexoes-tab-pane" role="tabpanel" aria-labelledby="reflexoes-tab" tabindex="0">
+                 <div class="row align-items-center">
+                    <div class="col-md-5 text-center">
+                        <img src="img/cha-calma.jpg" class="img-fluid" alt="Xícara de chá sobre uma mesa de madeira">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="section-title">Produções, Literatura e Calma</h2>
+                        <p>Um espaço para minhas produções pessoais, reflexões sobre livros que leio e para ficar sem pressa.</p>
+                        <h4 style="font-weight: 700; color: #795640; margin-top: 2rem;">O enlutado que não corre</h4>
+                        <p>A clínica fenomenológica caminha na contramão da pressa e de uma cultura que não tem paciência para a dor do outro. É comum ouvirmos frases como "você ainda não superou isso?". Como se o luto tivesse hora para acabar.</p>
+                        <p>Por isso, as sessões se tornam um espaço de liberdade para o paciente. Se um paciente enlutado precisa chorar, nós o acolhemos e acompanhamos seu choro. A superação não segue o tempo do relógio, mas o tempo psicológico.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="social-buttons">
+        <a href="https://www.instagram.com/entre.fenomenos" target="_blank" class="instagram-btn" title="Siga no Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=5511996068535&text=Olá,%20Ana!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" class="whatsapp-btn" title="Contato via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="mb-1">&copy; 2025 Entre Fenômenos. Todos os direitos reservados.</p>
+        <p class="mb-0">Contato: (11) 9.9606-8535</p>
+        <p class="mt-2">Desenvolvido por <a href="https://rvwtech.com.br" target="_blank">RVWtech</a></p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
